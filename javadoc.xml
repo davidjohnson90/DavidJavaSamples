@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="javadoc">
+    <target name="javadoc">
+        <javadoc access="public" author="true" classpath="C:\Users\Admin\.m2\repository\javax\activation\activation\1.1.1\activation-1.1.1.jar;C:\Users\Admin\.m2\repository\org\json\json\20140107\json-20140107.jar;target/test-classes;C:\Users\Admin\.m2\repository\javax\mail\mail\1.4.7\mail-1.4.7.jar" destdir="doc" doctitle="JavaSamples" nodeprecated="false" nodeprecatedlist="false" noindex="false" nonavbar="false" notree="false" packagenames="com.david.java.json,com.david.java.array,com.david.java.typeCasting,com.david.java.classInitialization,com.david.java.string,com.david.java.email" source="1.8" sourcepath="src/main/resources;src/test/java;src/main/java;src/test/resources" splitindex="true" use="true" version="true"/>
+    </target>
+</project>
