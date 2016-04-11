@@ -12,9 +12,6 @@ public class CallByReference {
 	int x = 10;
 	int y = 20;
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 		CallByReference reference = new CallByReference();
 		System.out.println(

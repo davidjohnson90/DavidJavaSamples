@@ -4,14 +4,13 @@
 package com.david.java.classInitialization;
 
 /**
- * When a class hierarchy is involved, the compiler creates a separate
- * <clinit> method for each class in that hierarchy. At runtime, the JVM loads
- * all hierarchy classes and calls their <clinit> methods in a top-to-bottom
- * order. That means the highest superclass's <clinit> method (which is Object's
- * <clinit> method) executes first. After Object's <clinit> method completes,
- * the next highest superclass's <clinit> method executes. The process continues
- * in a top-down fashion until the class with the main() method's
- * <clinit> method (if present) executes.
+ * When a class hierarchy is involved, the compiler creates a separate method
+ * for each class in that hierarchy. At runtime, the JVM loads all hierarchy
+ * classes and calls their methods in a top-to-bottom order. That means the
+ * highest superclass's method (which is Object's method) executes first. After
+ * Object's method completes, the next highest superclass's method executes. The
+ * process continues in a top-down fashion until the class with the main()
+ * method (if present) executes.
  * 
  * @author David
  *
