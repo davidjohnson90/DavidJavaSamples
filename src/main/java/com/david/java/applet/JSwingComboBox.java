@@ -5,35 +5,33 @@ package com.david.java.applet;
 
 import java.awt.FlowLayout;
 
-import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 
 /**
  * @author David
  *
  */
-public class SwingJButton extends JFrame {
-
+public class JSwingComboBox extends JFrame {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	String name[] = { "Arun", "Andrew", "David", "Johnson", "Sundarson" };
 
 	/**
-	 * 
-	 */
-	public SwingJButton() {
-		JButton button1 = new JButton("YES");
-		JButton button2 = new JButton("NO");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+ * 
+ */
+	public JSwingComboBox() {
+		JComboBox<String> comboBox = new JComboBox<>(name);
+		add(comboBox);
 		setLayout(new FlowLayout());
 		setSize(400, 400);
-		add(button1);
-		add(button2);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
 	}
 
 	public static void main(String[] args) {
-		new SwingJButton();
+		new JSwingComboBox();
 	}
 }

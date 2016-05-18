@@ -5,14 +5,14 @@ package com.david.java.applet;
 
 import java.awt.FlowLayout;
 
-import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 
 /**
  * @author David
  *
  */
-public class SwingJButton extends JFrame {
+public class SwingJCheckBox extends JFrame {
 
 	/**
 	 * 
@@ -22,18 +22,20 @@ public class SwingJButton extends JFrame {
 	/**
 	 * 
 	 */
-	public SwingJButton() {
-		JButton button1 = new JButton("YES");
-		JButton button2 = new JButton("NO");
+	public SwingJCheckBox() {
+		JCheckBox checkBox = new JCheckBox("YES");
+		add(checkBox);
+		checkBox = new JCheckBox("NO");
+		add(checkBox);
+		checkBox = new JCheckBox("MAYBE");
+		add(checkBox);
+		setSize(400, 400);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLayout(new FlowLayout());
-		setSize(400, 400);
-		add(button1);
-		add(button2);
 		setVisible(true);
 	}
 
 	public static void main(String[] args) {
-		new SwingJButton();
+		new SwingJCheckBox();
 	}
 }

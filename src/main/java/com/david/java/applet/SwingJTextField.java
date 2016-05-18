@@ -5,14 +5,14 @@ package com.david.java.applet;
 
 import java.awt.FlowLayout;
 
-import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JTextField;
 
 /**
  * @author David
  *
  */
-public class SwingJButton extends JFrame {
+public class SwingJTextField extends JFrame {
 
 	/**
 	 * 
@@ -22,18 +22,16 @@ public class SwingJButton extends JFrame {
 	/**
 	 * 
 	 */
-	public SwingJButton() {
-		JButton button1 = new JButton("YES");
-		JButton button2 = new JButton("NO");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	public SwingJTextField() {
+		JTextField textField = new JTextField(20);
+		add(textField);
 		setLayout(new FlowLayout());
 		setSize(400, 400);
-		add(button1);
-		add(button2);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
 	}
 
 	public static void main(String[] args) {
-		new SwingJButton();
+		new SwingJTextField();
 	}
 }
