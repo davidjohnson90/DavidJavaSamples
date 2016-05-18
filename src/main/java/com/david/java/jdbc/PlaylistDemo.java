@@ -15,13 +15,16 @@ import java.sql.Statement;
 public class PlaylistDemo {
 	public static void main(String[] args) {
 		try {
-			Connection connection = DriverManager.getConnection("jdbc:ucanaccess://E:/MSAcess/DavidTest.accdb");
+			Connection connection = DriverManager
+					.getConnection("jdbc:ucanaccess://src/main/resources/DavidTest.accdb");
 			Statement statement = connection.createStatement();
 			String sql = "Select * from Playlist";
 			ResultSet resultSet = statement.executeQuery(sql);
 			while (resultSet.next()) {
-				System.out.println("\n" + resultSet.getString(1) + "\t" + resultSet.getString(2) + "\t"
-						+ resultSet.getString(3) + "\t" + resultSet.getString(4) + "\t");
+				System.out.println("\n" + resultSet.getString(1) + "\t"
+						+ resultSet.getString(2) + "\t"
+						+ resultSet.getString(3) + "\t"
+						+ resultSet.getString(4) + "\t");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -13,7 +13,7 @@ public class PropertiesWrite {
 
 		try {
 
-			output = new FileOutputStream("src/config.properties");
+			output = new FileOutputStream("src/main/resources/config.properties");
 
 			// set the properties value
 			prop.setProperty("database", "localhost");

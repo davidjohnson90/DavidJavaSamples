@@ -13,7 +13,7 @@ public class PropertiesLoad {
 
 		try {
 
-			input = new FileInputStream("src/config.properties");
+			input = new FileInputStream("src/main/resources/config.properties");
 
 			// load a properties file
 			prop.load(input);
@@ -25,6 +25,8 @@ public class PropertiesLoad {
 
 		} catch (IOException ex) {
 			ex.printStackTrace();
+			PropertiesWrite.main(args);
+			PropertiesLoad.main(args);
 		} finally {
 			if (input != null) {
 				try {
