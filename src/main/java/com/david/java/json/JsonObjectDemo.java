@@ -16,10 +16,16 @@ public class JsonObjectDemo {
 			System.out.println(dataJSON.length());
 
 			for (int i = 0; i < dataJSON.length(); i++) {
-				System.out.println(dataJSON.names().get(i));
+				System.out.println("key name : " + dataJSON.names().get(i)
+						+ ", value name: "
+						+ dataJSON.get((String) dataJSON.names().get(i)));
 				try {
-					if (isJSONValid(dataJSON.getString(dataJSON.names().get(i).toString()))) {
-						System.out.println(dataJSON.getString(dataJSON.names().get(i).toString()));
+					if (isJSONValid(dataJSON.getString(dataJSON.names().get(i)
+							.toString()))) {
+						String key = dataJSON.getString(dataJSON.names().get(i)
+								.toString());
+						System.out.println("key: " + key + " = value: "
+								+ dataJSON.get(key));
 					}
 				} catch (Exception e) {
 					e.printStackTrace();
