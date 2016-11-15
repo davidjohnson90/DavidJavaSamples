@@ -11,7 +11,7 @@ import redis.clients.jedis.Jedis;
  * @author David
  *
  */
-public class RedisServiceNow {
+public class RedisOTRS {
 	public static void main(String[] args) {
 		// Connecting to Redis server on localhost
 		Jedis jedis = new Jedis("172.16.2.161");
@@ -19,24 +19,22 @@ public class RedisServiceNow {
 		// check whether server is running or not
 		System.out.println("Server is running: " + jedis.ping());
 		// set the data in redis string
-		jedis.set("hostname", "dev22351.service-now.com");
-		jedis.set("url", "https://dev22351.service-now.com");
-		jedis.set("username", "admin");
-		jedis.set("password", "Gods*Child1");
-		jedis.set("ticketingSystem", "serviceNow");
+		jedis.set("url", "http://96.82.85.69:8888/otrs/nph-genericinterface.pl/Webservice/GenericTicketConnectorREST/Ticket");
+		jedis.set("username", "david.johnson@techmahindra.com");
+		jedis.set("password", "1234567");
+		jedis.set("ticketingSystem", "otrs");
 		jedis.set("action", "start");
 		jedis.set("severity", "4");
-		jedis.set("ticketURL", "http://172.16.2.161:8081/api/ticket/incident/");
+		jedis.set("allArticlesEnabled", "1");
+		jedis.set("dynamicFields", "1");
+		jedis.set("ticketURL", "http://172.16.2.161/api/ticket/incident/");
 
-		String hostname = jedis.get("url");
-		hostname = hostname.replaceAll("https://", "");
 		// Get the stored data and print it
-		System.out.println("Stored string in redis::: hostname = " + jedis.get("hostname") + " ::: " + hostname
-				+ ", username = " + jedis.get("username") + ", password = " + jedis.get("password") + ", url = "
-				+ jedis.get("url") + ", ticketingSystem = " + jedis.get("ticketingSystem") + ", severity = "
-				+ jedis.get("severity") + ", action = " + jedis.get("action") + ", allArticlesEnabled = "
-				+ jedis.get("allArticlesEnabled") + ", dynamicFields = " + jedis.get("dynamicFields") + ", ticketURL = "
-				+ jedis.get("ticketURL"));
+		System.out.println("Stored string in redis::: hostname = " + jedis.get("hostname") + ", username = "
+				+ jedis.get("username") + ", password = " + jedis.get("password") + ", url = " + jedis.get("url")
+				+ ", ticketingSystem = " + jedis.get("ticketingSystem") + ", severity = " + jedis.get("severity")
+				+ ", action = " + jedis.get("action") + ", allArticlesEnabled = " + jedis.get("allArticlesEnabled")
+				+ ", dynamicFields = " + jedis.get("dynamicFields") + ", ticketURL = " + jedis.get("ticketURL"));
 
 		// Get the stored data and print it
 		// HashSet<String> listKeys = (HashSet<String>) jedis.keys("*");
