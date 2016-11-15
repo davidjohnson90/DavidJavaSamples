@@ -20,10 +20,10 @@ public class JSwingComboBox extends JFrame {
 	String name[] = { "Arun", "Andrew", "David", "Johnson", "Sundarson" };
 
 	/**
- * 
- */
+	* 
+	*/
 	public JSwingComboBox() {
-		JComboBox<String> comboBox = new JComboBox<>(name);
+		JComboBox<String> comboBox = new JComboBox<String>(name);
 		add(comboBox);
 		setLayout(new FlowLayout());
 		setSize(400, 400);

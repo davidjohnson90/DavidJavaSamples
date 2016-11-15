@@ -24,7 +24,7 @@ public class AutoBoxedInteger {
 			System.out.println("Not Same");
 
 		// If we explicitly create Integer objects using new operator, we get
-		// the output as â€œNot Sameâ€?
+		// the output as "Not Same"
 		Integer c = new Integer(40), d = new Integer(40);
 		if (c == d)
 			System.out.println("Same");

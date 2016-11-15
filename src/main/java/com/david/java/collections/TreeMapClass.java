@@ -13,7 +13,7 @@ import java.util.TreeMap;
  */
 public class TreeMapClass {
 	public static void main(String[] args) {
-		TreeMap<String, Integer> treeMap = new TreeMap<>();
+		TreeMap<String, Integer> treeMap = new TreeMap<String, Integer>();
 		treeMap.put("Arun", 26);
 		treeMap.put("Andrew", 18);
 		treeMap.put("David", 23);

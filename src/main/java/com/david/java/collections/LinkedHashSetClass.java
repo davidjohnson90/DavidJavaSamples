@@ -11,7 +11,7 @@ import java.util.LinkedHashSet;
  */
 public class LinkedHashSetClass {
 	public static void main(String[] args) {
-		LinkedHashSet<String> hashSet = new LinkedHashSet<>();
+		LinkedHashSet<String> hashSet = new LinkedHashSet<String>();
 		hashSet.add("Arun");
 		hashSet.add("Andrew");
 		hashSet.add("David");
