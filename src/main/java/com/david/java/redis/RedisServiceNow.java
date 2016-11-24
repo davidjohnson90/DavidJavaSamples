@@ -14,29 +14,30 @@ import redis.clients.jedis.Jedis;
 public class RedisServiceNow {
 	public static void main(String[] args) {
 		// Connecting to Redis server on localhost
-		Jedis jedis = new Jedis("172.16.2.161");
+		// Jedis jedis = new Jedis("172.16.2.161");
+		Jedis jedis = new Jedis("192.168.128.15");
 		System.out.println("Connection to server sucessfully");
 		// check whether server is running or not
 		System.out.println("Server is running: " + jedis.ping());
 		// set the data in redis string
-		jedis.set("hostname", "dev22351.service-now.com");
-		jedis.set("url", "https://dev22351.service-now.com");
-		jedis.set("username", "admin");
-		jedis.set("password", "Gods*Child1");
-		jedis.set("ticketingSystem", "serviceNow");
-		jedis.set("action", "start");
-		jedis.set("severity", "4");
-		jedis.set("ticketURL", "http://172.16.2.161:8081/api/ticket/incident/");
+		jedis.set(RedisConstant.TICKET_URL, "https://dev22351.service-now.com");
+		jedis.set(RedisConstant.TICKET_USERNAME, "admin");
+		jedis.set(RedisConstant.TICKET_PASSWORD, "Gods*Child1");
+		jedis.set(RedisConstant.TICKET_SYSTEM, "serviceNow");
+		jedis.set(RedisConstant.TICKET_ACTION, "start");
+		jedis.set(RedisConstant.TICKET_SEVERITY, "4");
+		// jedis.set("ticketURL",
+		// "http://172.16.2.161:8081/api/ticket/incident/");
 
 		String hostname = jedis.get("url");
 		hostname = hostname.replaceAll("https://", "");
+		
 		// Get the stored data and print it
-		System.out.println("Stored string in redis::: hostname = " + jedis.get("hostname") + " ::: " + hostname
-				+ ", username = " + jedis.get("username") + ", password = " + jedis.get("password") + ", url = "
-				+ jedis.get("url") + ", ticketingSystem = " + jedis.get("ticketingSystem") + ", severity = "
-				+ jedis.get("severity") + ", action = " + jedis.get("action") + ", allArticlesEnabled = "
-				+ jedis.get("allArticlesEnabled") + ", dynamicFields = " + jedis.get("dynamicFields") + ", ticketURL = "
-				+ jedis.get("ticketURL"));
+		System.out.println("Stored string in redis::: ticketingUsername = " + jedis.get(RedisConstant.TICKET_USERNAME)
+				+ ", ticketingPassword = " + jedis.get(RedisConstant.TICKET_PASSWORD) + ", ticketingUrl = "
+				+ jedis.get(RedisConstant.TICKET_URL) + ", ticketingSystem = " + jedis.get(RedisConstant.TICKET_SYSTEM)
+				+ ", ticketingSeverity = " + jedis.get(RedisConstant.TICKET_SYSTEM) + ", ticketingAction = "
+				+ jedis.get(RedisConstant.TICKET_ACTION));
 
 		// Get the stored data and print it
 		// HashSet<String> listKeys = (HashSet<String>) jedis.keys("*");
@@ -68,7 +69,6 @@ public class RedisServiceNow {
 		props.put(RedisConstant.TICKET_SYSTEM, jedis.get(RedisConstant.TICKET_SYSTEM));
 		props.put(RedisConstant.TICKET_ACTION, jedis.get(RedisConstant.TICKET_ACTION));
 		props.put(RedisConstant.TICKET_SEVERITY, jedis.get(RedisConstant.TICKET_SEVERITY));
-		props.put(RedisConstant.TICKET_HOSTNAME, jedis.get(RedisConstant.TICKET_HOSTNAME));
 		return props;
 	}
 
@@ -80,7 +80,6 @@ public class RedisServiceNow {
 		props.put(RedisConstant.TICKET_SYSTEM, RedisConstant.get(RedisConstant.TICKET_SYSTEM));
 		props.put(RedisConstant.TICKET_ACTION, RedisConstant.get(RedisConstant.TICKET_ACTION));
 		props.put(RedisConstant.TICKET_SEVERITY, RedisConstant.get(RedisConstant.TICKET_SEVERITY));
-		props.put(RedisConstant.TICKET_HOSTNAME, RedisConstant.get(RedisConstant.TICKET_HOSTNAME));
 		return props;
 	}
 }

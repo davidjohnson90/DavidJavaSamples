@@ -21,5 +21,8 @@ public class JsonNullTest {
 			}
 		}
 		System.out.println(inputDataJson);
+		String data = inputDataJson.get("sysUpTime").toString();
+		System.out.println(inputDataJson.get("sysUpTime"));
+		System.out.println(data);
 	}
 }

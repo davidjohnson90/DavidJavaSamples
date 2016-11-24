@@ -62,13 +62,12 @@ public class RedisConstant {
 	public static final String orgJvmThresholdMapStr = "orgJvmThresholdMap";
 	public static final String orgJvmAppStr = "orgJvmAppMap";
 
-	public static final String TICKET_HOSTNAME = "hostname";
-	public static final String TICKET_USERNAME = "username";
-	public static final String TICKET_PASSWORD = "password";
-	public static final String TICKET_URL = "url";
+	public static final String TICKET_USERNAME = "ticketingUsername";
+	public static final String TICKET_PASSWORD = "ticketingPassword";
+	public static final String TICKET_URL = "ticketingUrl";
 	public static final String TICKET_SYSTEM = "ticketingSystem";
-	public static final String TICKET_SEVERITY = "severity";
-	public static final String TICKET_ACTION = "action";
+	public static final String TICKET_SEVERITY = "ticketingSeverity";
+	public static final String TICKET_ACTION = "ticketingAction";
 
 	private static String[] redisMapNames = new String[] { orgSiteHostnameToSerialNumberMapStr,
 			orgSiteDeviceIdToIpSetMapStr, orgSiteIpToHostnameMapStr, redisCacheStr, EVENT_CORRELATION_MAP,
