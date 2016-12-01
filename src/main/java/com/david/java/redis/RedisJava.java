@@ -23,8 +23,7 @@ public class RedisJava {
 		// set the data in redis string
 		jedis.set("david-name", "Hi David");
 		// Get the stored data and print it
-		System.out.println("Stored string in redis:: "
-				+ jedis.get("david-name"));
+		System.out.println("Stored string in redis:: " + jedis.get("david-name"));
 
 		// store data in redis list
 		jedis.lpush("david-list", "Redis");

@@ -15,7 +15,7 @@ import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
-public class RedisConstant {
+public class RedisProducerUtil {
 	final static JedisPoolConfig poolConfig;
 	final static JedisPool jedisPool;
 	final static int DEFAULT_REDIS_PORT = 6379;
@@ -67,7 +67,8 @@ public class RedisConstant {
 	public static final String TICKET_URL = "ticketingUrl";
 	public static final String TICKET_SYSTEM = "ticketingSystem";
 	public static final String TICKET_SEVERITY = "ticketingSeverity";
-	public static final String TICKET_ACTION = "ticketingAction";
+	public static final String TICKET_READ = "ticketingRead";
+	public static final String TICKET_WRITE = "ticketingWrite";
 
 	private static String[] redisMapNames = new String[] { orgSiteHostnameToSerialNumberMapStr,
 			orgSiteDeviceIdToIpSetMapStr, orgSiteIpToHostnameMapStr, redisCacheStr, EVENT_CORRELATION_MAP,
@@ -79,7 +80,7 @@ public class RedisConstant {
 			METRIC_NAME_MAPPING, EMAIL_CONFIG_MAPPING, ORG_SITE_DC_MAPPING, orgJvmTransactionMapStr,
 			orgJvmThresholdMapStr, orgJvmAppStr, TRANSACTION_THRESHOLD };
 
-	private static Logger logger = Logger.getLogger(RedisConstant.class);
+	private static Logger logger = Logger.getLogger(RedisProducerUtil.class);
 	// Initialize the resources, based on the appropriate environment
 	// variables...
 	static {
