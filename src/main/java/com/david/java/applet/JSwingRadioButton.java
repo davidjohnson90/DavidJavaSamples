@@ -24,7 +24,7 @@ public class JSwingRadioButton extends JFrame {
 	 */
 	public JSwingRadioButton() {
 
-		JRadioButton radioButton = new JRadioButton("A");
+		JRadioButton radioButton = new JRadioButton("TestJava");
 		add(radioButton);
 		radioButton = new JRadioButton("B");
 		add(radioButton);

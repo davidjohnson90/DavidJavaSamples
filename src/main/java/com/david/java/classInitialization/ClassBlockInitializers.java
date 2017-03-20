@@ -10,7 +10,7 @@ import java.io.File;
  * prove inadequate for more complex class initialization. For example, suppose
  * you need to read a file's contents into a buffer before the main() method
  * executes. What do you do? Java meets that challenge by providing the class
- * block initializer. A class block initializer consists of keyword static
+ * block initializer. TestJava class block initializer consists of keyword static
  * followed by an open brace character ({), initialization code, and a close
  * brace character (}). Furthermore, a class block initializer appears within a
  * class, but not within any of that class's methods

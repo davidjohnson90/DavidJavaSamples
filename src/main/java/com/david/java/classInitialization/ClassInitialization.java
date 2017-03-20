@@ -2,7 +2,7 @@ package com.david.java.classInitialization;
 
 /**
  * 
- * A program consists of classes. Before a Java application runs, Java's class
+ * TestJava program consists of classes. Before a Java application runs, Java's class
  * loader loads its starting class -- the class with a public static void
  * main(String [] args) method -- and Java's byte code verifier verifies the
  * class. Then that class initializes. The simplest kind of class initialization
