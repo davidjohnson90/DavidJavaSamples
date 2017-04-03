@@ -10,8 +10,7 @@ import com.david.java.file.FileMA;
  *
  */
 public class NumbersDemo {
-	public static void main(String[] args) {
-		FileMA fileMA = new FileMA();
-		fileMA.readAttachedFile();
-	}
+  public static void main(String[] args) {
+    FileMA.readAttachedFile();
+  }
 }
