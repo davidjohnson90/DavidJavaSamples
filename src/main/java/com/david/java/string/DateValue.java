@@ -5,31 +5,54 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.TimeZone;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
- * @author David
- *
+ * This class demonstrates working with date values in Java.
+ * It showcases date formatting, parsing, and obtaining the epoch time.
+ * <p>Author: David</p>
  */
 public class DateValue {
-  public static void main(String[] args) {
-    Date date = new Date();
-    Format formatter = new SimpleDateFormat("YYYY-MM-dd_hh-mm-ss");
-    System.out.println(formatter.format(date));
+    private static final Logger logger = Logger.getLogger(DateValue.class.getName());
 
-    // String someDate = "2016-08-26 04:12:04";
+    /**
+     * Main entry point of the program.
+     *
+     * @param args the command-line arguments
+     */
+    public static void main(String[] args) {
+        // Get the current date
+        Date date = new Date();
 
-    SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");/*
-                                                                        * "MM.dd.yyyy" ) ;
-                                                                        */
-    try {
-      String someDate = sdf.format(new Date());
-      System.out.println("some date + " + someDate);
-      // sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
-      date = sdf.parse(someDate);
-      System.out.println(date + " ::: " + someDate + " ::: " + TimeZone.getDefault());
-    } catch (ParseException e) {
-      e.printStackTrace();
+        // Create a date formatter with the desired format
+        Format formatter = new SimpleDateFormat("YYYY-MM-dd_hh-mm-ss");
+
+        // Format the current date and log the formatted date
+        String formattedDate = formatter.format(date);
+        logger.info("Formatted Date: " + formattedDate);
+
+        // Create a date formatter with another format
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+        try {
+            // Format the current date using the second format
+            String today = simpleDateFormat.format(new Date());
+            logger.info("Today: " + today);
+
+            // Parse the formatted date string back to a Date object
+            date = simpleDateFormat.parse(today);
+            logger.info("Date: " + date);
+
+            // Log the date in the simple date format and the current timezone
+            logger.info("Date in simple date format: " + today);
+            logger.info("Timezone: " + TimeZone.getDefault());
+        } catch (ParseException e) {
+            // Log any parse exception that occurs
+            logger.log(Level.SEVERE, "Error occurred while parsing the date", e);
+        }
+
+        // Get the epoch time of the date and log it
+        long epochTime = date.getTime();
+        logger.info("Date in long milliseconds: " + epochTime);
     }
-    System.out.println(date.getTime());
-  }
 }
