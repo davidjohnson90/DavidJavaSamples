@@ -1,40 +1,36 @@
-/**
- * 
- */
 package com.david.java.applet;
 
 import java.applet.Applet;
-import java.awt.Graphics;
+import java.awt.*;
 
 /**
- * @author David
+ * The RectangleApplet class is a simple Java applet that draws a rounded rectangle on the applet window.
  *
+ * @author David
  */
 public class RectangleApplet extends Applet {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	int height, width;
+    int height, width;
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.applet.Applet#init()
-	 */
-	@Override
-	public void init() {
-		height = getSize().height;
-		width = getSize().width;
-		setName("Rectangle Applet");
-	}
-	
-	/* (non-Javadoc)
-	 * @see java.awt.Container#paint(java.awt.Graphics)
-	 */
-	@Override
-	public void paint(Graphics g) {
-	g.drawRoundRect(10, 30, width, height, 2, 3);}
+    /*
+     * Initializes the applet and sets the height, width, and name.
+     */
+    @Override
+    public void init() {
+        height = getSize().height;
+        width = getSize().width;
+        setName("Rectangle Applet");
+    }
+
+    /**
+     * Draws a rounded rectangle on the applet window.
+     *
+     * @param g the Graphics object to draw on the applet window.
+     */
+    @Override
+    public void paint(Graphics g) {
+        g.drawRoundRect(10, 30, width, height, 2, 3);
+    }
 }
