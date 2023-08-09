@@ -26,8 +26,8 @@ public class ASCIIValue {
             e.printStackTrace();
         }
         char charValue = string.charAt(0);
-        int ascii = Character.getNumericValue(charValue);// int ascii = (int) charValue;
-        logger.log(Level.INFO, "Character: " + charValue);
-        logger.log(Level.INFO, "ASCII value: " + ascii);
+        int ascii = Character.getNumericValue(charValue); // int ascii = (int) charValue;
+        logger.log(Level.INFO, "Character: {0}", charValue);
+        logger.log(Level.INFO, "ASCII value: {0}", ascii);
     }
 }

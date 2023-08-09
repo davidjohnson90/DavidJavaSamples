@@ -8,6 +8,11 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+/**
+ * The DigestAuthenticationExample class demonstrates how to make an HTTP request with Digest authentication.
+ * <p>
+ * author David
+ */
 public class DigestAuthenticationExample {
 
     public static void main(String[] args) throws IOException {

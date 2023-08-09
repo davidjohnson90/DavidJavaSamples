@@ -9,6 +9,17 @@ import java.util.logging.Logger;
 
 /**
  * The ApiSecurityExample class demonstrates how to create a cryptographic hash using the HMAC-SHA256 algorithm for a given message and secret key.
+ * <p>
+ * HMAC (Hash-based Message Authentication Code) is a mechanism for calculating a message authentication code involving a cryptographic hash function
+ * in combination with a secret cryptographic key.
+ * <p>
+ * In this example, the HMAC-SHA256 algorithm is used to create the hash.
+ * The secret key and message are passed to the cryptographer method, which generates the hash.
+ * <p>
+ * Note: Make sure to keep the secret key secure, as it is used to create and verify the authenticity of the hash.
+ * <p>
+ * The Apache Commons Codec library is used to perform Base64 encoding of the hash bytes.
+ * <p>
  * Author: David
  */
 public class ApiSecurityExample {
@@ -39,7 +50,7 @@ public class ApiSecurityExample {
             byte[] hashBytes = sha256HMAC.doFinal(message.getBytes());
             hash = Base64.encodeBase64String(hashBytes);
         } catch (Exception e) {
-            logger.log(Level.SEVERE, "Error while generating cryptographic hash: " + e.getMessage(), e);
+            logger.log(Level.SEVERE, "Error while generating cryptographic hash: {0}", e.getMessage());
         }
         return hash;
     }

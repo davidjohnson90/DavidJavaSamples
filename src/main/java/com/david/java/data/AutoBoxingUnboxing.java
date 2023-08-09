@@ -1,24 +1,27 @@
-/**
- * 
- */
 package com.david.java.data;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
- * @author David
- *
+ * The AutoBoxingUnboxing class demonstrates the concepts of autoboxing and unboxing in Java.
+ * Author: David
  */
 public class AutoBoxingUnboxing {
-	public static void main(String[] args) {
-		Integer integer = 100;
-		int i = integer;
-		System.out.println("Autoboxed i is : " + i + " from " + integer);
 
-		Character character = 'a';
-		char c = character;
-		System.out.println("Autoboxed c is : " + c + " from " + character);
+    private static final Logger logger = Logger.getLogger(AutoBoxingUnboxing.class.getName());
 
-		Integer iob;
-		iob = 100;
-		System.out.println(++iob);
-	}
+    public static void main(String[] args) {
+        Integer integer = 100;
+        int i = integer;
+        logger.log(Level.INFO, "Autoboxed i is : {0} from {1}", new Object[]{i, integer});
+
+        Character character = 'a';
+        char c = character;
+        logger.log(Level.INFO, "Autoboxed c is : {0} from {1}", new Object[]{c, character});
+
+        Integer iob;
+        iob = 100;
+        logger.log(Level.INFO, "Unboxed iob: {0}", ++iob);
+    }
 }

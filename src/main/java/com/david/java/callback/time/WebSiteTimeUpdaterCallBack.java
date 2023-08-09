@@ -1,30 +1,36 @@
-/*******************************************************
- * Copyright (C) 2015-2016 TechMahindra
- * 
- * This file is part of DavidJavaSamples.
- * 
- * DavidJavaSamples can not be copied and/or distributed without the express permission.
- *******************************************************/
 package com.david.java.callback.time;
 
 /**
- *
- * Class details
- * @author David
- *
+ * The TimeUpdaterCallBack interface is offered from your OS to be implemented by clients.
+ * It provides a contract for classes that want to be notified about time updates.
+ * <p>
+ * author David
  */
-// For example: Let's assume that this interface is offered from your OS to be implemented
 interface TimeUpdaterCallBack {
-  void updateTime(long time);
+    /**
+     * Method to be called when a time update occurs.
+     *
+     * @param time the updated time in milliseconds.
+     */
+    void updateTime(long time);
 }
 
-// this is your implementation.
-// for example: You want to update your website time every hour
+/**
+ * The WebSiteTimeUpdaterCallBack class is an implementation of the TimeUpdaterCallBack interface.
+ * It updates the website's time every hour by printing the updated time.
+ * <p>
+ * author David
+ */
 class WebSiteTimeUpdaterCallBack implements TimeUpdaterCallBack {
 
-  @Override
-  public void updateTime(long time) {
-    // print the updated time anywhere in your website's example
-    System.out.println(time);
-  }
+    /**
+     * Update the website's time by printing the updated time.
+     *
+     * @param time the updated time in milliseconds.
+     */
+    @Override
+    public void updateTime(long time) {
+        // Print the updated time anywhere in your website's example
+        System.out.println(time);
+    }
 }
