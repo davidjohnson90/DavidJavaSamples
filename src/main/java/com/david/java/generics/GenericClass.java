@@ -1,35 +1,53 @@
-/**
- * 
- */
 package com.david.java.generics;
 
+import java.util.logging.Logger;
+
 /**
- * @author David
+ * A class to demonstrate the use of a generic class in Java.
+ * This example shows how a generic class can be used to create instances of different types.
  *
+ * @author David
  */
 public class GenericClass {
-	public static void main(String[] args) {
-		Gen<Integer> iob = new Gen<Integer>(100);
-		int i = iob.getObj();
-		System.out.println(i);
+    private static final Logger logger = Logger.getLogger(GenericClass.class.getName());
 
-		Gen<String> sob = new Gen<String>("Hi David");
-		String s = sob.getObj();
-		System.out.println(s);
-	}
+    public static void main(String[] args) {
+        // Create an instance of Gen<Integer> and use it with an Integer
+        Gen<Integer> integerObject = new Gen<Integer>(100);
+        int integer = integerObject.getObj();
+        logger.info("Value from integerObject: " + integer);
+
+        // Create an instance of Gen<String> and use it with a String
+        Gen<String> stringObject = new Gen<String>("Hi David");
+        String string = stringObject.getObj();
+        logger.info("Value from stringObject: " + string);
+    }
 }
 
+/**
+ * A generic class that can hold an object of any type.
+ *
+ * @param <T> The type of the object being held.
+ */
 class Gen<T> {
-	T obj;
+    private static final Logger logger = Logger.getLogger(Gen.class.getName());
+    private T obj;
 
-	/**
-	 * 
-	 */
-	public Gen(T o) {
-		obj = o;
-	}
+    /**
+     * Constructs a new instance of Gen with the specified object.
+     *
+     * @param o The object to be stored.
+     */
+    public Gen(T o) {
+        obj = o;
+    }
 
-	public T getObj() {
-		return obj;
-	}
+    /**
+     * Returns the object stored in this instance.
+     *
+     * @return The stored object.
+     */
+    public T getObj() {
+        return obj;
+    }
 }

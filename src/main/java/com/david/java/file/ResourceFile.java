@@ -65,7 +65,7 @@ public class ResourceFile {
      * Reads and displays the content of the attached file (UTF-8 encoded).
      */
     public static void readAttachedFile() {
-        try (InputStream inputStream = ResourceFile.class.getClassLoader().getResourceAsStream(fileName)) {
+        try (InputStream inputStream = ResourceFile.class.getResourceAsStream("/" + fileName)) {
             if (inputStream == null) {
                 logger.severe("File not found: " + fileName);
                 return;
@@ -83,7 +83,7 @@ public class ResourceFile {
     }
 
     public static int countLines(String filename) throws IOException {
-        try (InputStream inputStream = ResourceFile.class.getClassLoader().getResourceAsStream(fileName)) {
+        try (InputStream inputStream = ResourceFile.class.getResourceAsStream("/" + fileName)) {
             if (inputStream == null) {
                 logger.severe("File not found: " + filename);
                 return 0; // or return -1 to indicate an error
@@ -104,7 +104,7 @@ public class ResourceFile {
     }
 
     public static String readLine(int lineNumber, int j) throws IOException {
-        try (InputStream inputStream = ResourceFile.class.getClassLoader().getResourceAsStream(fileName)) {
+        try (InputStream inputStream = ResourceFile.class.getResourceAsStream("/" + fileName)) {
             if (inputStream == null) {
                 logger.severe("File not found: " + fileName);
                 return null;

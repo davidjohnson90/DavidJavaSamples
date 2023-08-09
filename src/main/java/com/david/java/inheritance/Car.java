@@ -1,30 +1,50 @@
-/**
- * 
- */
 package com.david.java.inheritance;
 
+import java.util.logging.Logger;
+
 /**
- * @author David
- *
+ * A simple example to demonstrate inheritance in Java.
+ * This example showcases how a subclass (Car) inherits from a superclass (Vehicle) and uses the inherited and local members.
+ * It also demonstrates the use of JavaDoc comments, inline comments, and logging.
+ * <p>
+ * This class defines a Car which inherits from the Vehicle class. It adds a "modelType" attribute and a method to display details.
+ * The main method creates a Car instance and calls the showDetails() method.
+ * <p>
+ * To run this program, execute the main method.
+ * Make sure to observe the output in the console.
+ * <p>
+ * Author: David
  */
 public class Car extends Vehicle {
-	String modelType;
+    private static final Logger LOGGER = Logger.getLogger(Car.class.getName());
+    private String modelType;
 
-	public static void main(String[] args) {
-		Car car = new Car();
-		car.showDetails();
-	}
+    /**
+     * The entry point of the program. Creates an instance of Car and calls the showDetails() method.
+     *
+     * @param args Command-line arguments (not used in this example).
+     */
+    public static void main(String[] args) {
+        Car car = new Car();
+        car.showDetails();
+    }
 
-	/**
-	 * 
-	 */
-	private void showDetails() {
-		modelType = "Sports";
-		vehicleType = "Car";
-		System.out.println("The vehicle is a " + modelType + " " + vehicleType);
-	}
+    /**
+     * Displays the details of the car.
+     */
+    private void showDetails() {
+        modelType = "Sports";
+        vehicleType = "Car";
+        LOGGER.info("The vehicle is a " + modelType + " " + vehicleType);
+    }
 }
 
+/**
+ * The Vehicle class represents a base class for different types of vehicles.
+ * It contains a single member variable "vehicleType".
+ * <p>
+ * Author: David
+ */
 class Vehicle {
-	String vehicleType;
+    protected String vehicleType; // Protected to be accessible by subclasses
 }
